@@ -738,7 +738,8 @@ ul  { list-style: none; }
 }
 /* ── Hero video ──────────────────────────────────────────── */
 .hero__video-wrap {
-  width: min(600px, 90vw);
+  width: 100%;
+  max-width: 700px;
   margin: 0 auto 1.5rem;
 }
 
