@@ -1,13 +1,14 @@
 ---
 layout: layouts/base.njk
-title: About
-description: "ABOUT WRONGORIGIN"
+title: About — WRONGORIGIN
+meta-description: About WRONGORIGIN
 ---
 
 <section class="about">
 
   <div class="about__portrait">
-    <img src="/images/wrongorigintransparentdark.png" alt="WRONGORIGIN" class="about__img" />
+    {# Optional: add a portrait photo here #}
+    {# <img class="about__img" src="{{ '/images/portrait.jpg' | url }}" alt="WRONGORIGIN" /> #}
   </div>
 
   <div class="about__content">
@@ -15,29 +16,34 @@ description: "ABOUT WRONGORIGIN"
 
     <div class="about__bio">
       <p>
-        WRONGORIGIN is an audiovisual entity concerned with in-between spaces— occurences that should have taken 	place in your american dream—
-        the hours, places, and moments that exist at the edges of the world. Frames taken in places that toll 	roads and fossil fuel industry monopolized high-ways won't take you. Decentralized snippets of realities 	other than those found at the starting point.
-        Current works span documentaries, architecture, and portraiture.
+        WRONGORIGIN is an audiovisual entity concerned with in-between spaces —
+        occurrences that should have taken place in your american dream —
+        the hours, places, and moments that exist at the edges of the world.
       </p>
       <p>
-        Based between DFW and wherever the next shot is taken. 
-	Available for editorial, commercial, and personal projects.
+        Frames taken in places that toll roads and fossil fuel industry
+        monopolized highways won't take you. Decentralized snippets of realities
+        other than those found at the starting point.
       </p>
+      <p>
+        Current works span documentaries, architecture, and portraiture.<br/>
+        Based between DFW and wherever the next shot is taken.
+      </p>
+      <p>Available for editorial, commercial, and personal projects.</p>
     </div>
 
     <div class="about__links">
-      <a href="mailto:rewrongorigin@gmail.com" class="about__link">rewrongorigin@gmail.com</a>
-      <a href="https://instagram.com/wrongorigin/" class="about__link" target="_blank" rel="noopener">Instagram</a>
+      <a class="about__link" href="mailto:rewrongorigin@gmail.com">Email</a>
+      <a class="about__link" href="https://instagram.com/wrongorigin/" target="_blank" rel="noopener">Instagram</a>
     </div>
 
-    <div class="about__clients">
-      <h2 class="about__clients-heading">Clients & Publications</h2>
-      <ul class="about__clients-list">
-        <li>Publication Name</li>
-        <li>Brand or Client</li>
-        <li>Exhibition / Gallery</li>
-      </ul>
-    </div>
+    <h2 class="about__clients-heading">Clients &amp; Publications</h2>
+    <ul class="about__clients-list">
+      {# Replace these with your real clients — one <li> per entry #}
+      <li>Publication Name</li>
+      <li>Brand or Client</li>
+      <li>Exhibition / Gallery</li>
+    </ul>
   </div>
 
 </section>

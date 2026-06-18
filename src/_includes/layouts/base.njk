@@ -3,22 +3,22 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>{% if title %}{{ title }} — {% endif %}WRONGORIGIN</title>
-  <meta name="description" content="{{ description or 'WRONGORIGIN — Photography' }}" />
+  <meta name="description" content="{{ meta-description or 'WRONGORIGIN — Photography portfolio' }}" />
+  <title>{{ title or 'WRONGORIGIN' }}</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,300;0,400;1,300;1,400&family=Syne:wght@400;700;800&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="/wrongorigin/css/main.css" />
+  <link rel="stylesheet" href="{{ '/css/main.css' | url }}" />
 </head>
 <body>
 
   <nav class="nav">
-    <a href="/wrongorigin/" class="nav__logo">
-  <img src="/wrongorigin/images/wrongorigintransparent.png" alt="WRONGORIGIN" class="nav__logo-img" />
-</a>
+    <a class="nav__logo" href="{{ '/' | url }}">
+      <img class="nav__logo-img" src="{{ '/images/wrongorigintransparent.png' | url }}" alt="WRONGORIGIN" />
+    </a>
     <ul class="nav__links">
-      <li><a href="/wrongorigin/projects/" class="nav__link">Work</a></li>
-<li><a href="/wrongorigin/about/" class="nav__link">About</a></li>
+      <li><a class="nav__link" href="{{ '/projects/' | url }}">Work</a></li>
+      <li><a class="nav__link" href="{{ '/about/' | url }}">About</a></li>
     </ul>
   </nav>
 
@@ -27,10 +27,10 @@
   </main>
 
   <footer class="footer">
-    <p class="footer__copy">&copy; {{ date | default('2025') }} WRONGORIGIN. All rights reserved.</p>
-    <p class="footer__tagline">Images made in the dark.</p>
+    <span class="footer__copy">© 2025 WRONGORIGIN. All rights reserved.</span>
+    <span class="footer__tagline">Images made in the dark.</span>
   </footer>
 
-  <script src="/wrongorigin/js/main.js"></script>
+  <script src="{{ '/js/main.js' | url }}"></script>
 </body>
 </html>

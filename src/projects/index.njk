@@ -1,35 +1,34 @@
 ---
 layout: layouts/base.njk
-title: Work
-description: "Photography series by WRONGORIGIN"
+title: Work — WRONGORIGIN
+meta-description: Photography series by WRONGORIGIN
 ---
 
 <section class="archive">
   <div class="archive__header">
     <h1 class="archive__title">Work</h1>
-    <p class="archive__count">{{ collections.projects | length }} Series</p>
+    <span class="archive__count">{{ collections.projects.length }} Series</span>
   </div>
 
   <div class="archive__grid">
     {% for project in collections.projects %}
-    <a href="{{ project.url }}" class="archive__item" style="--i: {{ loop.index }}">
-      <div class="archive__img-wrap">
-        <img
-          src="{{ project.data.cover or '/images/placeholder.jpg' }}"
-          alt="{{ project.data.title }}"
-          class="archive__img"
-          loading="lazy"
-        />
-        <div class="archive__overlay"></div>
-      </div>
-      <div class="archive__info">
-        <span class="archive__num">{{ loop.index | string | padStart(2, '0') }}</span>
-        <div>
-          <h2 class="archive__name">{{ project.data.title }}</h2>
-          <p class="archive__loc">{{ project.data.location }} &mdash; {{ project.data.year }}</p>
+      <a class="archive__item" href="{{ project.url | url }}" style="--i: {{ loop.index }}">
+        <div class="archive__img-wrap">
+          {% if project.data.cover %}
+            <img class="archive__img" src="{{ project.data.cover | url }}" alt="{{ project.data.title }}" loading="lazy" />
+          {% else %}
+            <img class="archive__img" src="{{ '/images/wrongorigintransparent.png' | url }}" alt="{{ project.data.title }}" loading="lazy" />
+          {% endif %}
+          <div class="archive__overlay"></div>
         </div>
-      </div>
-    </a>
+        <div class="archive__info">
+          <span class="archive__num">{{ project.data.order | padStart(2, '0') }}</span>
+          <div>
+            <div class="archive__name">{{ project.data.title }}</div>
+            <div class="archive__loc">{{ project.data.location }} — {{ project.data.year }}</div>
+          </div>
+        </div>
+      </a>
     {% endfor %}
   </div>
 </section>

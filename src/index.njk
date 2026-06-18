@@ -1,19 +1,16 @@
 ---
 layout: layouts/base.njk
-title: ""
-description: "WRONGORIGIN — Photography portfolio"
+title: WRONGORIGIN
+meta-description: WRONGORIGIN — Photography portfolio
 ---
 
-<!-- HERO -->
 <section class="hero">
   <div class="hero__bg"></div>
   <div class="hero__content">
-    <p class="hero__eyebrow">ENTER</p>
-<h1 class="hero__title">
-  <img src="/wrongorigin/images/wrongorigintransparent.png" alt="WRONGORIGIN" class="hero__logo" />
-</h1>
-<p class="hero__sub">Frames taken from the wrong angle. wrongorigin.</p>
-<a href="/wrongorigin/projects/" class="hero__cta">View Work</a>
+    <p class="hero__eyebrow">wrongorigin.</p>
+    <h1 class="hero__title">WRONG<br/><em>ORIGIN</em></h1>
+    <p class="hero__sub">Frames taken from the wrong angle.</p>
+    <a href="{{ '/projects/' | url }}" class="hero__cta"><span>View Work</span></a>
   </div>
   <div class="hero__scroll-hint">
     <span>Scroll</span>
@@ -21,41 +18,38 @@ description: "WRONGORIGIN — Photography portfolio"
   </div>
 </section>
 
-<!-- FEATURED SERIES -->
 <section class="series">
   <div class="series__header">
     <h2 class="series__heading">Selected Series</h2>
-    <a href="/projects/" class="series__all">All work →</a>
+    <a href="{{ '/projects/' | url }}" class="series__all">All work →</a>
   </div>
 
   <div class="series__grid">
     {% for project in collections.projects | slice(0, 4) %}
-    <a href="{{ project.url }}" class="series__item" style="--i: {{ loop.index }}">
-      <div class="series__img-wrap">
-        <img
-          src="{{ project.data.cover or '/images/placeholder.jpg' }}"
-          alt="{{ project.data.title }}"
-          class="series__img"
-          loading="lazy"
-        />
-        <div class="series__overlay"></div>
-      </div>
-      <div class="series__meta">
-        <span class="series__num">0{{ loop.index }}</span>
-        <h3 class="series__title">{{ project.data.title }}</h3>
-        <p class="series__location">{{ project.data.location }}</p>
-      </div>
-    </a>
+      <a class="series__item" href="{{ project.url | url }}" style="--i: {{ loop.index }}">
+        <div class="series__img-wrap">
+          {% if project.data.cover %}
+            <img class="series__img" src="{{ project.data.cover | url }}" alt="{{ project.data.title }}" loading="lazy" />
+          {% else %}
+            <img class="series__img" src="{{ '/images/wrongorigintransparent.png' | url }}" alt="{{ project.data.title }}" loading="lazy" />
+          {% endif %}
+          <div class="series__overlay"></div>
+        </div>
+        <div class="series__meta">
+          <span class="series__num">{{ loop.index | padStart(2, '0') }}</span>
+          <span class="series__title">{{ project.data.title }}</span>
+          <span class="series__location">{{ project.data.location }}</span>
+        </div>
+      </a>
     {% endfor %}
   </div>
 </section>
 
-<!-- STATEMENT -->
 <section class="statement">
   <div class="statement__inner">
     <p class="statement__text">
-      Where were these taken?<br>
-      <em>Is that even the r-</em> wrongorigin.
+      Scenes and stills taken from your front door<br/>
+      <em>or from edges of earth you have yet to explore.</em> wrongorigin.
     </p>
   </div>
 </section>
