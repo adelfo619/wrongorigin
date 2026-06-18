@@ -739,3 +739,15 @@ ul  { list-style: none; }
   object-fit: contain;
   display: block;
 }
+/* ── Hero video ──────────────────────────────────────────── */
+.hero__video-wrap {
+  width: min(600px, 90vw);
+  margin: 0 auto 1.5rem;
+}
+
+.hero__video {
+  width: 100%;
+  height: auto;
+  display: block;
+  mix-blend-mode: lighten;
+}
