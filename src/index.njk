@@ -20,10 +20,23 @@ meta-description: WRONGORIGIN — Photography portfolio
   </div>
 
   <div class="hero__content">
-    <p class="hero__eyebrow">wrongorigin.</p>
-    <p class="hero__sub">Bleed your visuals into reality.</p>
-    <a href="{{ '/projects/' | url }}" class="hero__cta"><span>View Work</span></a>
+  <p class="hero__eyebrow">wrongorigin.</p>
+
+  <div class="hero__video-wrap">
+    <video
+      class="hero__video"
+      src="{{ '/images/logospin.mp4' | url }}"
+      autoplay
+      loop
+      muted
+      playsinline
+      preload="auto"
+    ></video>
   </div>
+
+  <p class="hero__sub">Bleed your visuals into reality.</p>
+  <a href="{{ '/projects/' | url }}" class="hero__cta"><span>View Work</span></a>
+</div>
 
   <div class="hero__scroll-hint">
     <span>Scroll</span>
