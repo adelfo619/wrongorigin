@@ -132,10 +132,7 @@ ul  { list-style: none; }
 .hero__bg {
   position: absolute;
   inset: 0;
-  background:
-    radial-gradient(ellipse 80% 60% at 70% 40%, #1a1510 0%, transparent 60%),
-    radial-gradient(ellipse 40% 60% at 20% 80%, #0d0d0d 0%, transparent 50%),
-    linear-gradient(160deg, #0a0a0a 0%, #111008 50%, #080808 100%);
+  background: #000000;
   z-index: 0;
 }
 
@@ -749,5 +746,4 @@ ul  { list-style: none; }
   width: 100%;
   height: auto;
   display: block;
-  mix-blend-mode: lighten;
 }
